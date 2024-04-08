@@ -306,23 +306,31 @@ void Objects::house()
     // Back
     glBindTexture(GL_TEXTURE_2D, ID2[35]);
     glPushMatrix();
-    glTranslatef(0, 0, -5);
+    glTranslatef(0, 0, -10);
     glScalef(1, 2, 1);
     quadricShape1();
+    glPopMatrix();
+
+    // MIddle
+    glBindTexture(GL_TEXTURE_2D, ID2[35]);
+    glPushMatrix();
+    glTranslatef(0, 0, -5);
+    glScalef(1, 2, 1);
+    quadricShape4();
     glPopMatrix();
 
     // Left
     glBindTexture(GL_TEXTURE_2D, ID2[35]);
     glPushMatrix();
-    glTranslatef(0, 0, -2);
-    quadricShape2();
+    glTranslatef(0, 0, -7);
+    quadricShape3();
     glPopMatrix();
 
     // Right
     glBindTexture(GL_TEXTURE_2D, ID2[35]);
     glPushMatrix();
-    glTranslatef(10, 0, -2);
-    quadricShape2();
+    glTranslatef(10, 0, -7);
+    quadricShape3();
     glPopMatrix();
 
 

@@ -118,6 +118,20 @@ void quadricShape1()
     glEnd();
 }
 
+void quadricShape4()
+{
+    glBegin(GL_QUADS);
+    glTexCoord2f(1.0f, 1.0f);
+    glVertex3f(6, 4, 3);
+    glTexCoord2f(0.0f, 1.0f);
+    glVertex3f(0, 4, 3);
+    glTexCoord2f(0.0f, 0.0f);
+    glVertex3f(0, 0, 3);
+    glTexCoord2f(1.0f, 0.0f);
+    glVertex3f(6, 0, 3);
+    glEnd();
+}
+
 void quadricShape2()
 {
     glBegin(GL_QUADS);
@@ -129,6 +143,20 @@ void quadricShape2()
     glVertex3f(0, 0, 0);
     glTexCoord2f(1.0f, 0.0f);
     glVertex3f(0, 0, 5);
+    glEnd();
+}
+
+void quadricShape3()
+{
+    glBegin(GL_QUADS);
+    glTexCoord2f(1.0f, 1.0f);
+    glVertex3f(0, 8, 10);
+    glTexCoord2f(0.0f, 1.0f);
+    glVertex3f(0, 8, 0);
+    glTexCoord2f(0.0f, 0.0f);
+    glVertex3f(0, 0, 0);
+    glTexCoord2f(1.0f, 0.0f);
+    glVertex3f(0, 0, 10);
     glEnd();
 }
 

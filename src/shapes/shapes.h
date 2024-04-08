@@ -11,6 +11,8 @@ void materialCurve(GLfloat difX, GLfloat difY, GLfloat difZ, GLfloat ambfactor =
 
 void quadricShape1();
 void quadricShape2();
+void quadricShape3();
+void quadricShape4();
 
 void cubicalShape(GLfloat difX, GLfloat difY, GLfloat difZ, GLfloat ambX = 0, GLfloat ambY = 0, GLfloat ambZ = 0, GLfloat shine = 50);
 void sphericalShape(GLfloat difX, GLfloat difY, GLfloat difZ, GLfloat ambX, GLfloat ambY, GLfloat ambZ, GLfloat shine = 90);
