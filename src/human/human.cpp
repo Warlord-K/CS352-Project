@@ -119,14 +119,18 @@ void Human::move(int key, int x, int y)
             human_x += (cos(radian(angle_x)));
             human_z -= (sin(radian(angle_x)));
 
+            // boundary
             if(human_x>=121 || human_x<=-120) {
                 human_x -= (cos(radian(angle_x)));
             }
-
             if(human_z>=80 || human_z<=-95) {
                 human_z += (sin(radian(angle_x)));
             }
- 
+            // Pool
+            if((human_x<=104 && human_x>=80) && (human_z<=-20 && human_z>=-70)) {
+                human_x -= (cos(radian(angle_x)));
+                human_z += (sin(radian(angle_x)));
+            }
             if (!leg_flag)
             {
                 if (!leg_coming_back)
@@ -193,6 +197,13 @@ void Human::move(int key, int x, int y)
             //move the human backward
             human_x -= (cos(radian(angle_x)));
             human_z += (sin(radian(angle_x)));
+            if(human_x>=121 || human_x<=-120) {
+                human_x += (cos(radian(angle_x)));
+            }
+
+            if(human_z>=80 || human_z<=-95) {
+                human_z -= (sin(radian(angle_x)));
+            }
             break;
 
         case GLUT_KEY_LEFT:

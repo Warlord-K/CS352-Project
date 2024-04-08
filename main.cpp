@@ -89,10 +89,11 @@ void display(void)
 
     glEnable(GL_DEPTH_TEST);
 
-    spotLight1();
-    spotLight2();
-    spotLight3();
-    spotLight4();
+
+    // spotLight1();
+    // spotLight2();
+    // spotLight3();
+    // spotLight4();
 
     camera->setView(1);
 
@@ -223,6 +224,10 @@ void myKeyboardFunc(unsigned char key, int x, int y)
         if (day == false)
         {
             day = true;
+            glEnable(GL_LIGHT0);
+            glEnable(GL_LIGHT5);
+            glEnable(GL_LIGHT6);
+            glEnable(GL_LIGHT7);
             lighting1(-100, 100, 100, intensity);
             lighting2(100, 100, -100, intensity);
             lighting3(-100, 100, -100, intensity);
