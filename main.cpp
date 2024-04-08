@@ -8,7 +8,7 @@ double degToRad(double angle)
 }
 
 //flags
-GLboolean  doorFlag = false,  day = true;
+GLboolean  day = true;
 
 //variables to track the motion of mouse
 double mouse_x = -1, mouse_y = -1;
@@ -40,7 +40,18 @@ struct Camera {
     void setView(int view) {
 
         currView = view;
-        if(view == 1) {
+
+        if(view == 0) {
+            //world view
+            eyeX = -10;
+            eyeY = 5.0;
+            eyeZ = 100;
+            refX = 0;
+            refY = 0;
+            refZ = 0;  
+        }
+
+        else if(view == 1) {
             //human view
             eyeX = human->human_x - 15*cos(degToRad(human->angle_x));
             eyeY = -5;
@@ -80,6 +91,8 @@ void display(void)
 
     spotLight1();
     spotLight2();
+    spotLight3();
+    spotLight4();
 
     camera->setView(1);
 
@@ -203,19 +216,10 @@ void myKeyboardFunc(unsigned char key, int x, int y)
             objects->controlPointsFlag = false;
             break;
         }
-    case 'g':
-        if (doorFlag == false)
-        {
-            doorFlag = true;
-            break;
-        }
-        else
-        {
-            doorFlag = false;
-            break;
-        }
-
-    case '0':
+    case 'r':
+        camera->setView(0); //reset view reference
+        break;
+    case 'c':
         if (day == false)
         {
             day = true;
