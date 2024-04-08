@@ -87,19 +87,31 @@ void display(void)
     ground();
 
     //draw the swimming pool
+    glPushMatrix();
+    glTranslatef(20, 0, -60);
     objects->drawPool();
+    glPopMatrix();
 
+    glPushMatrix();
+    glTranslatef(-50, 0, -20);
+    objects->fence();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(50, 0, -20);
+    objects->fence();
+    glPopMatrix();
 
     //draw the dining table
     glPushMatrix();
     glTranslatef(20, 0, -60);
-    objects->diningSet();
+    objects->diningTables();
     glPopMatrix();
 
     //draw the house
     glPushMatrix();
-    glTranslatef(-40,-25,20);
-    glScalef(9,12,12);
+    glTranslatef(-40,-25,-20);
+    glScalef(6,8,8);
     objects->house();
     glPopMatrix();
 
@@ -109,7 +121,7 @@ void display(void)
     glRotatef(-(90-human->angle_x), 0, 1, 0); // rotate w.r.t y axis to simulate orientation of human
     human->drawHuman();
     glPopMatrix();
-
+    objects->walls();
     glDisable(GL_LIGHTING);
 
     glFlush();
@@ -300,8 +312,6 @@ int main(int argc, char **argv)
     LoadTexture("sgi images/whiteground.sgi", 3);
     LoadTexture("sgi images/pirate-copy.sgi", 4);
     LoadTexture("sgi images/blue_gradient.sgi", 5);
-    // LoadTexture("sgi images/baskinrobbinslogo.sgi", 6);
-    // LoadTexture("sgi images/iitindore.sgi", 7);
     LoadTexture("sgi images/wooden-textured-background.sgi", 8);
 
     LoadTexture("sgi images/scorchsky.sgi", 9);
@@ -331,7 +341,7 @@ int main(int argc, char **argv)
     LoadTexture("sgi images/treebark.sgi", 30);
     LoadTexture("sgi images/bush.sgi", 31);
 
-    LoadTexture("sgi images/iitindore.sgi", 32);
+    LoadTexture("sgi images/brick_wall.sgi", 32);
     LoadTexture("sgi images/tiles.sgi", 33);
     LoadTexture("sgi images/water.sgi", 34);
 

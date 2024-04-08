@@ -357,28 +357,12 @@ void Objects::fence()
 void Objects::diningSet()
 {
     //function for the dining table
-
-
     glPushMatrix();
     glTranslatef(8, 10, 64);
     glScalef(1, 1.5, 1);
     diningTables();
     glPopMatrix();
 
-    // glPushMatrix();
-    // glTranslatef(22, -18, -25);
-    // glScalef(1.5, 2, 1);
-    // donutsShop();
-    // glPopMatrix();
-    glPushMatrix();
-    glTranslatef(-50, 0, 80);
-    fence();
-    glPopMatrix();
-
-    glPushMatrix();
-    glTranslatef(50, 0, 80);
-    fence();
-    glPopMatrix();
 }
 
 void Objects::wall()
