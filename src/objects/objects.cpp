@@ -137,6 +137,111 @@ void Objects::bush()
     glDisable(GL_TEXTURE_2D);
 }
 
+
+void Objects::bed() {
+    
+    float bedColor[3] = {0.753, 0.753, 0.753}; 
+    float mattressColor[3] = {1, 0.5, 0}; 
+    float standColor[3] = {0.753, 0.753, 0.753};
+
+    //bed plye
+    glPushMatrix();
+    glTranslatef(-2.5, 0, 0.5);
+    glTranslatef(0, -16, -15);
+    glScalef(5.6, 0.3, 1.6); 
+    cubicalShape(bedColor[0], bedColor[1], bedColor[2], 0.3, 0.5, 0.5); 
+    glPopMatrix();
+    
+    glPushMatrix();
+    glTranslatef(-2.3, 1.6, 0.5);
+    glTranslatef(0, -16, -15);
+    glScalef(0.2, 0.7, 1.6);
+    cubicalShape(bedColor[0], bedColor[1], bedColor[2], 0.3, 0.5, 0.5); 
+    glPopMatrix();
+    
+    glPushMatrix();
+    glTranslatef(-2.5, 0, 0.5);
+    glTranslatef(0, -16, -15);
+    glScalef(5.6, -1, 1.6); 
+    cubicalShape(bedColor[0], bedColor[1], bedColor[2], 0.3, 0.5, 0.5); 
+    glPopMatrix();
+    
+    // Mattress
+    glPushMatrix();
+    glTranslatef(-2.5, 0.7, 0.5);
+    glTranslatef(0, -16, -15);
+    glScalef(5.6, 0.3, 1.6); 
+    cubicalShape(mattressColor[0], mattressColor[1], mattressColor[2], 0.3, 0.5, 0.5); 
+    glPopMatrix();
+}
+
+
+void Objects::cupboard(){
+  
+    float cupboardColor[3] = {0.753, 0.753, 0.753}; 
+    float doorColor[3] = {1, 0.5, 0}; 
+
+   
+    glPushMatrix();
+    glTranslatef(-2.5, 0, -7);
+    glTranslatef(44, -20,-20);
+    glScalef(0.9, 8, 1.6); 
+    cubicalShape(cupboardColor[0], cupboardColor[1], cupboardColor[2], 0.3, 0.5, 0.5); 
+    glPopMatrix();
+
+    
+    glPushMatrix();
+    glTranslatef(-1.3, 0, -7);
+    glTranslatef(44, -20,-20);
+    glScalef(0.9, 8, 1.6); 
+    cubicalShape(doorColor[0], doorColor[1], doorColor[2], 0.3, 0.5, 0.5); 
+    glPopMatrix();
+
+    
+    glPushMatrix();
+    glTranslatef(-3.7, 0, -20);
+    glTranslatef(44, -20,-10);
+    glScalef(0.9, 8, 1.6); 
+    cubicalShape(doorColor[0], doorColor[1], doorColor[2], 0.3, 0.5, 0.5); 
+    glPopMatrix();
+}
+
+void Objects::TV(){
+  
+    float TVColor[3] = {0.1,0.1,0.1}; 
+    float shelfColor[3]={0.647, 0.165, 0.165};
+
+   
+    glPushMatrix();
+    glTranslatef(-10, 0, 0.5);
+    glTranslatef(0, -2, 5);
+    glScalef(0.2, 3, 4.5); 
+    cubicalShape(TVColor[0], TVColor[1], TVColor[2], 0.3, 0.5, 0.5); 
+    glPopMatrix();
+    
+    glPushMatrix();
+    glTranslatef(-10.5, 0, 0.5);
+    glTranslatef(0, -2, 5);
+    glScalef(0.2, 3.1, 4.8); 
+    cubicalShape(0, 0, 0, 0.3, 0.5, 0.5); 
+    glPopMatrix();
+    
+    //TV remote shelf
+    glPushMatrix();
+    glTranslatef(-10, 0, 0.5);
+    glTranslatef(0, -8, 5);
+    glScalef(0.2, 0.1, 4.5); 
+    cubicalShape(shelfColor[0], shelfColor[1], shelfColor[2], 0.3, 0.5, 0.5); 
+    glPopMatrix();
+    
+    
+
+    
+    
+}
+
+
+
 void Objects::chair()
 {
     //function to draw a chair
@@ -256,6 +361,7 @@ void Objects::teapot(void)
     glPopMatrix();
 }
 
+
 void Objects::diningTables()
 {
     //function to draw a dining set with a table, chairs, umbrella and teapot
@@ -332,7 +438,6 @@ void Objects::house()
     glTranslatef(10, 0, -7);
     quadricShape3();
     glPopMatrix();
-
 
     glDisable(GL_TEXTURE_2D);
 }

@@ -194,14 +194,44 @@ void display(void)
 
     //draw the dining table
     glPushMatrix();
-    glTranslatef(5, 0, -40);
+    glTranslatef(-20, 0, -5);
     objects->diningTables();
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-25, 0, -40);
+    glTranslatef(-20, 0, 4);
     objects->diningTables();
     glPopMatrix();
+
+    
+    // Draw Bed
+    glPushMatrix();
+    glTranslatef(-30, 0, -9);
+    objects->bed();
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(-30, 0, -13);
+    objects->bed();
+    glPopMatrix();
+    
+    // Draw TV
+    glPushMatrix();
+    glTranslatef(-25, 0, -60);
+    glRotatef(90, 0, 1, 0);
+    objects->TV();
+    glPopMatrix();
+    
+    // draw cupboard
+    glPushMatrix();
+    glTranslatef(-25, 0, -10);
+    objects->cupboard();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-25, 0, 0);
+    objects->cupboard();
+    glPopMatrix();
+
 
     //draw the house
     glPushMatrix();
@@ -440,8 +470,8 @@ int main(int argc, char **argv)
     LoadTexture("sgi images/tiles.sgi", 33);
     LoadTexture("sgi images/water.sgi", 34);
 
-    LoadTexture("sgi images/house2.sgi", 35);
-    LoadTexture("sgi images/brick_wall.sgi", 35);
+    LoadTexture("sgi images/home.sgi", 35);
+    LoadTexture("sgi images/wal.sgi", 35);
 
 
     glutReshapeFunc(fullScreen);
