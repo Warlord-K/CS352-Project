@@ -287,26 +287,27 @@ void Objects::cupboard()
     materialProperty();
     glEnable(GL_TEXTURE_2D);
 
-    glBindTexture(GL_TEXTURE_2D, ID2[16]);
+    glBindTexture(GL_TEXTURE_2D, ID2[18]);
     glPushMatrix();
+    glScalef(1, 2, 1);
     quadricShape1();
     glPopMatrix();
 
+    glBindTexture(GL_TEXTURE_2D, ID2[5]);
     glPushMatrix();
     glTranslatef(0, 11, -2);
     glRotatef(90, 1, 0, 0);
-    glScalef(1, 1.5, 1);
+    glScalef(1, 1.2, 1);
     quadricShape1();
     glPopMatrix();
 
-    glBindTexture(GL_TEXTURE_2D, ID2[17]);
     glPushMatrix();
     glTranslatef(0, 0, -5);
     glScalef(1, 2, 1);
     quadricShape1();
     glPopMatrix();
 
-    glBindTexture(GL_TEXTURE_2D, ID2[18]);
+    // glBindTexture(GL_TEXTURE_2D, ID2[18]);
 
     glPushMatrix();
     glTranslatef(0, 3, -2);
@@ -324,12 +325,12 @@ void Objects::cupboard()
     quadricShape2();
     glPopMatrix();
 
-    glBindTexture(GL_TEXTURE_2D, ID2[5]);
-    glPushMatrix();
-    glTranslatef(0, 6, 1);
-    glScalef(1, 0.5, 1);
-    quadricShape1();
-    glPopMatrix();
+    // glBindTexture(GL_TEXTURE_2D, ID2[5]);
+    // glPushMatrix();
+    // glTranslatef(0, 6, 1);
+    // glScalef(1, 0.5, 1);
+    // quadricShape1();
+    // glPopMatrix();
 
     glDisable(GL_TEXTURE_2D);
 }

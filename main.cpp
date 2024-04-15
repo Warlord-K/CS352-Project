@@ -301,7 +301,9 @@ void display(void)
     glPopMatrix();
     objects->walls();
     glPushMatrix();
-    glTranslatef(-30, -25, 0);
+    glTranslatef(-35, -20, 5);
+    glScalef(1.5,3,2);
+    glRotatef(90,0,1,0);
     objects->cupboard();
     glPopMatrix();
     glDisable(GL_LIGHTING);
@@ -518,7 +520,7 @@ int main(int argc, char **argv)
     LoadTexture("sgi images/pinkblue.sgi", 17);
     LoadTexture("sgi images/baskin-robin-ad.sgi", 18);
     LoadTexture("sgi images/de5b9e.sgi", 19);
-    LoadTexture("sgi images/pinkorange.sgi", 20);
+    LoadTexture("sgi images/retro-wooden-bedroom-furniture.sgi", 20);
 
     LoadTexture("sgi images/ff6d0d.sgi", 21);
 
