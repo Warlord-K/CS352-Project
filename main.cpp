@@ -65,6 +65,60 @@ struct Camera {
 
 Camera* camera = new Camera();
 
+// Defining material properties
+// ref. https://www.opengl.org/archives/resources/code/samples/glut_examples/examples/lightlab.c
+GLfloat brass_ambient[] =
+{0.33, 0.22, 0.03, 1.0}, brass_diffuse[] =
+{0.78, 0.57, 0.11, 1.0}, brass_specular[] =
+{0.99, 0.91, 0.81, 1.0}, brass_shininess = 27.8;
+
+GLfloat red_plastic_ambient[] =
+{0.0, 0.0, 0.0}, red_plastic_diffuse[] =
+{0.5, 0.0, 0.0}, red_plastic_specular[] =
+{0.7, 0.6, 0.6}, red_plastic_shininess = 32.0;
+
+GLfloat emerald_ambient[] =
+{0.0215, 0.1745, 0.0215}, emerald_diffuse[] =
+{0.07568, 0.61424, 0.07568}, emerald_specular[] =
+{0.633, 0.727811, 0.633}, emerald_shininess = 76.8;
+
+GLfloat slate_ambient[] =
+{0.02, 0.02, 0.02}, slate_diffuse[] =
+{0.02, 0.01, 0.01}, slate_specular[] =
+{0.4, 0.4, 0.4}, slate_shininess = .78125;
+
+float diffuse_intensity = 0.5;
+int select_material = 0;
+
+// Selects material to be shown on the screen
+void material(){
+	if(select_material == 0){
+		glMaterialfv(GL_FRONT, GL_AMBIENT, brass_ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, brass_diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, brass_specular);
+  		glMaterialf(GL_FRONT, GL_SHININESS, brass_shininess);
+	}
+	if(select_material == 1){
+		glMaterialfv(GL_FRONT, GL_AMBIENT, emerald_ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, emerald_diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, emerald_specular);
+  		glMaterialf(GL_FRONT, GL_SHININESS, emerald_shininess);
+	}
+	if(select_material == 2){
+		glMaterialfv(GL_FRONT, GL_AMBIENT, red_plastic_ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, red_plastic_diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, red_plastic_specular);
+  		glMaterialf(GL_FRONT, GL_SHININESS, red_plastic_shininess);
+	}
+	if(select_material == 3){
+		glMaterialfv(GL_FRONT, GL_AMBIENT, slate_ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, slate_diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, slate_specular);
+  		glMaterialf(GL_FRONT, GL_SHININESS, slate_shininess);
+	}
+}
+
+
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -77,6 +131,21 @@ void display(void)
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(camera->eyeX, camera->eyeY, camera->eyeZ, camera->refX, camera->refY, camera->refZ, 0, 1, 0);
+
+
+	// material();	// selecting material
+
+	// GLfloat light_diffuse[] = {diffuse_intensity, diffuse_intensity, diffuse_intensity, 1.0}; 	// Varing Diffuse light intersity
+	
+	// // Enabling Lights 
+	// glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
+	// glLightfv(GL_LIGHT1, GL_DIFFUSE, light_diffuse);
+	// glLightfv(GL_LIGHT2, GL_DIFFUSE, light_diffuse);
+	// glLightfv(GL_LIGHT3, GL_DIFFUSE, light_diffuse);
+	// glEnable(GL_LIGHT0);
+	// glEnable(GL_LIGHT1);
+	// glEnable(GL_LIGHT2);
+	// glEnable(GL_LIGHT3);
 
     //enable lighting in the scene
     glEnable(GL_LIGHTING);
@@ -161,50 +230,50 @@ void display(void)
     glTranslatef(50, 0, -5);
     objects->fence();
     glPopMatrix();
-    glPushMatrix();
-    glTranslatef(52, 0, -5);
-    objects->fence();
-    glPopMatrix();
-    glPushMatrix();
-    glTranslatef(54, 0, -5);
-    objects->fence();
-    glPopMatrix();
-    glPushMatrix();
-    glTranslatef(56, 0, -5);
-    objects->fence();
-    glPopMatrix();
-    glPushMatrix();
-    glTranslatef(58, 0, -5);
-    objects->fence();
-    glPopMatrix();
-    glPushMatrix();
-    glTranslatef(60, 0, -5);
-    objects->fence();
-    glPopMatrix();
+    // glPushMatrix();
+    // glTranslatef(52, 0, -5);
+    // objects->fence();
+    // glPopMatrix();
+    // glPushMatrix();
+    // glTranslatef(54, 0, -5);
+    // objects->fence();
+    // glPopMatrix();
+    // glPushMatrix();
+    // glTranslatef(56, 0, -5);
+    // objects->fence();
+    // glPopMatrix();
+    // glPushMatrix();
+    // glTranslatef(58, 0, -5);
+    // objects->fence();
+    // glPopMatrix();
+    // glPushMatrix();
+    // glTranslatef(60, 0, -5);
+    // objects->fence();
+    // glPopMatrix();
     glPushMatrix();
     glTranslatef(50, 0, -40);
     objects->fence();
     glPopMatrix();
-    glPushMatrix();
-    glTranslatef(52, 0, -40);
-    objects->fence();
-    glPopMatrix();
-    glPushMatrix();
-    glTranslatef(54, 0, -40);
-    objects->fence();
-    glPopMatrix();
-    glPushMatrix();
-    glTranslatef(56, 0, -40);
-    objects->fence();
-    glPopMatrix();
-    glPushMatrix();
-    glTranslatef(58, 0, -40);
-    objects->fence();
-    glPopMatrix();
-    glPushMatrix();
-    glTranslatef(60, 0, -40);
-    objects->fence();
-    glPopMatrix();
+    // glPushMatrix();
+    // glTranslatef(52, 0, -40);
+    // objects->fence();
+    // glPopMatrix();
+    // glPushMatrix();
+    // glTranslatef(54, 0, -40);
+    // objects->fence();
+    // glPopMatrix();
+    // glPushMatrix();
+    // glTranslatef(56, 0, -40);
+    // objects->fence();
+    // glPopMatrix();
+    // glPushMatrix();
+    // glTranslatef(58, 0, -40);
+    // objects->fence();
+    // glPopMatrix();
+    // glPushMatrix();
+    // glTranslatef(60, 0, -40);
+    // objects->fence();
+    // glPopMatrix();
 
     //draw the dining table
     glPushMatrix();
@@ -231,6 +300,10 @@ void display(void)
     human->drawHuman();
     glPopMatrix();
     objects->walls();
+    glPushMatrix();
+    glTranslatef(-30, -25, 0);
+    objects->cupboard();
+    glPopMatrix();
     glDisable(GL_LIGHTING);
 
     glFlush();
@@ -369,6 +442,18 @@ void myKeyboardFunc(unsigned char key, int x, int y)
         }
     case 27:
         exit(1);
+    case 'v':
+        select_material = 1;
+        break;
+    case 'b':
+        select_material = 2;
+        break;
+    case 'n':
+        select_material = 3;
+        break;
+    case 'm':
+        select_material = 0;
+        break;
     }
 
     glutPostRedisplay();

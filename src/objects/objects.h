@@ -45,7 +45,7 @@ struct Objects {
     void house();
     void fence();
     void diningSet();
-
+    void cupboard();
     void streetLampbody();
     void lampPost1();
     void lampPost2();

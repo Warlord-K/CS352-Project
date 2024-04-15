@@ -1,4 +1,7 @@
 #include "human.h"
+#include <iostream>
+
+using namespace std;
 
 double radian(double angle)
 {
@@ -131,6 +134,24 @@ void Human::move(int key, int x, int y)
                 human_x -= (cos(radian(angle_x)));
                 human_z += (sin(radian(angle_x)));
             }
+            // House
+            if((human_x<=-38 && human_x>=-41) && (human_z<=23 && human_z>=-57)) {
+                human_x -= (cos(radian(angle_x)));
+                human_z += (sin(radian(angle_x)));
+            }
+            if((human_x<=22 && human_x>=19) && (human_z<=23 && human_z>=-57)) {
+                human_x -= (cos(radian(angle_x)));
+                human_z += (sin(radian(angle_x)));
+            }
+            if((human_x<=23 && human_x>=-38) && (human_z<=-54 && human_z>=-57)) {
+                human_x -= (cos(radian(angle_x)));
+                human_z += (sin(radian(angle_x)));
+            }
+            // if((human_x<=104 && human_x>=80) && (human_z<=-20 && human_z>=-70)) {
+            //     human_x -= (cos(radian(angle_x)));
+            //     human_z += (sin(radian(angle_x)));
+            // }
+            cout << human_x << " " << human_z << endl;
             if (!leg_flag)
             {
                 if (!leg_coming_back)
